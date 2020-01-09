@@ -1,52 +1,23 @@
-<!-- HERO MODULE STARTS HERE-->
-<mj-section padding="0">
+<!-- HERO MODULE STARTS HERE -->
+<!-- Hero image-->
+<mj-section background-color="#f0f0f0">
     <mj-column>
-        <mj-image
-            css-class="hero-image"
-            padding="0" 
-            src="<%= data.hero_image %>"
-        >
-        </mj-image>
-    </mj-column>
+      <mj-image src="<%= data.hero_image %>"></mj-image>
+    </mj-column>       
+</mj-section>  
+<mj-section background-color="#ffffff">
+  <mj-column>
+    <!--Hero Body Copy-->
+    <mj-text padding="0 60px" mj-class="santander-headline primary-red"><%= data.hero_title %></mj-text>
+    <mj-spacer height="20px" />
+    <% if (data.user_name.length) { %> 
+    <mj-text padding="0 60px" css-class="hero-content" mj-class="gray">Hi <span style="font-weight:bold"><%= data.user_name %>,</span></mj-text>
+    <mj-spacer height="20px" /> 
+    <% } %>
+    <mj-text padding="0 60px" css-class="hero-content" mj-class="gray"><%= data.hero_bodycopy_text %></mj-text>
+    <mj-spacer height="30px" /> 
+    <!--Hero Button-->
+    <mj-button padding="0 60px" align="left" css-class="hero-button" background-color="#ec0000" href="#" border-radius="0" font-size="18px" color="#ffffff" line-height="26px"><%= data.hero_button_text %></mj-button>
+  </mj-column>
 </mj-section>
-
-
-
-
-  <!-- Logo-->
-    <mj-section background-color="#ffffff" padding-bottom="0" padding-top="20px" padding-left="50px">
-      <mj-column width="100%" vertical-align="top"  >
-        <mj-image align="left" href="https://mjml.io" src="https://www.santander.co.uk/themes/custom/santander_web18/logo_select.svg" alt="Amario logo" align="center" border="none" width="182px" padding-left="0px" padding-right="0px" padding-bottom="0px" padding-top="0"></mj-image>
-      </mj-column>
-    </mj-section>
-    <!-- Hero image-->
-    <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0">
-     <mj-column>
-          <mj-image src="http://191n.mj.am/img/191n/3s/xmi.jpg" alt="Cruise of the month : Corse" align="center" border="none" width="599px" padding-left="0px" padding-right="0px" padding-bottom="0px" padding-top="0"></mj-image>
-     </mj-column>
-    </mj-section>
-    <!--Hero title-->
-    <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0" padding-left="60px">
-       
-        <mj-column vertical-align="top" >
-            <mj-text padding="0" align="left"  >
-                <span style="color: rgb(236, 0, 0); font-size: 36px; font-weight: bold;"  >
-                    <div style="width: 386px; padding: 0px"><%= data.hero_title %></div>
-                </span>
-            </mj-text>
-        </mj-column>
-    </mj-section>
-
-    <mj-section background-color="#ffffff" padding-bottom="0px" padding-top="0" padding-left="60px">
-        <mj-column vertical-align="top">
- 
-            <mj-text align="left" color="#000000" font-family="Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif" font-size="16px" padding-left="0" padding-right="25px" padding-bottom="0px" padding-top="0">
-                <p style="width: 480px; padding: 0px">
-                    <span style="color: rgb(57, 63, 76); line-height: 1.3;"><%= data.hero_bodycopy_text %></span>
-                </p>
-            </mj-text>
-           
-        </mj-column>
-    </mj-section>
-    
 <!-- HERO MODULE ENDS HERE -->

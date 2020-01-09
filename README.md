@@ -18,9 +18,11 @@ Email template pulls the data from googleSheet which is currently located at htt
 
 To assign the value in EJS template, use data.column_name. Column name is the second column name in google sheet. Please note, the column name should always be written in lower case inside the template. 
 
-For example, if column name in google sheet is "Hero_Image", the template should have value like "<%= data.hero_image %>". Object "data" is the master object which holds all values of excelsheet.
+For example, if column name in google sheet is "Hero_Image", the template should have value like `<%= data.hero_image %>`. Object "data" is the master object which holds all values of excelsheet.
+
 
 ### Running the docker app
  - Go to the directory that has your Dockerfile
  - Create docker image with name 'santander-email' `docker build -t santander-email .`
  - Run docker image `docker run -p 3000:3000 santander-email`
+

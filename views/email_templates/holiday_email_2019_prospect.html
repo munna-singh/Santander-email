@@ -1,0 +1,24 @@
+<mjml>
+    <mj-head>
+        <% image_url = "https://g43-fonts.s3-us-west-2.amazonaws.com/happy-holiday/" %>
+        <!-- MOBILE BREAKPOINT -->
+        <mj-breakpoint width="480px" />
+        <!-- INBOX PREVIEW -->
+        <!-- <mj-preview><%= data.preview_text %></mj-preview> -->
+        <!-- TITLE -->
+        <!-- <mj-title><% if (data.brand.length && data.brand.length > 0) { %><%- data.brand %> x <% } %>GALE</mj-title> -->
+        <!-- SET GLOBAL ATTRIBUTES HERE -->
+        <mj-attributes>
+        <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" />
+        </mj-attributes>
+        <%- include('../ejs_modules/style_1.html', data); %>
+    </mj-head>
+    <mj-body>
+      <%- include('../ejs_modules/hero.html', data); %>
+      <!-- <%- include('../ejs_modules/gif_section.html', data); %>
+      <%- include('../ejs_modules/module_1.html', data); %>
+      <%- include('../ejs_modules/module_2.html', data); %>
+      <%- include('../ejs_modules/module_3.html', data); %>
+      <%- include('../ejs_modules/footer.html', data); %> -->
+    </mj-body>
+  </mjml>

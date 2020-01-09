@@ -1,0 +1,102 @@
+
+<!-- DIVIDER IMAGE MODULE STARTS HERE-->
+<mj-wrapper
+    background-color="#FFFFFF"
+    padding="0"
+>
+    <mj-section padding="0">
+        <mj-column>
+            <mj-image
+                css-class="divider-image"
+                padding="0" 
+            src="<%= image_url %><%= data.section_header_image %>"
+            >
+            </mj-image>
+        </mj-column>
+    </mj-section>
+    <mj-section 
+        padding="30px 0 0 0"
+        background-color="#FFFFFF"
+    >
+        <mj-column>
+            <mj-text
+                css-class="fs26"
+                font-weight="bold"
+                align="center"
+                font-size="52px"
+                line-height="0.8"
+                color="#000000"
+
+            >
+                <%- data.section_header_line1 %>
+            </mj-text>
+            <mj-text
+                css-class="fs40"
+                font-weight="bold"
+                align="center"
+                font-size="72px"
+                line-height="0.8"
+                color="#000000"
+
+            >
+                <%- data.section_header_line2 %>
+            </mj-text>
+        </mj-column>
+    </mj-section>
+    <!-- DIVIDER IMAGE MODULE ENDS HERE -->
+    <!-- MODULE 1 STARTS HERE-->
+    <mj-section 
+        padding="50px 0 0 0"
+        background-color="#FFFFFF"
+    >
+        <mj-column>
+            <mj-image
+                css-class="module-1-image"
+                padding="0" 
+                src="<%= image_url %><%= data.module1_image1 %>"
+            >
+            </mj-image>
+        </mj-column>
+    </mj-section>
+    <mj-section 
+        padding="15px 0 50px 0"
+        background-color="#FFFFFF"
+    >
+        <mj-column>
+            <mj-text
+                css-class="fs22"
+                font-weight="bold"
+                align="center"
+                font-size="28px"
+                line-height="1.25"
+                color="#000000"
+
+            >
+                <%- data.module1_text1 %>
+            </mj-text>
+            <mj-text
+                css-class="fs18"
+                font-weight="300"
+                align="center"
+                font-size="24px"
+                line-height="1.25"
+                color="#000000"
+            >
+                <%- data.module1_text2 %>
+            </mj-text>
+            <% if (data.module1_text3 && data.module1_text3.length > 0) { %>
+                <mj-text
+                css-class="fs18"
+                font-weight="300"
+                align="center"
+                font-size="24px"
+                line-height="1.25"
+                color="#000000"
+                >
+                <%- data.module1_text3 %>
+                </mj-text>
+            <% } %>
+        </mj-column>
+    </mj-section>
+</mj-wrapper>
+<!-- MODULE 1 ENDS HERE -->

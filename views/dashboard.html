@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Alchemy - Email Studio
+        </title>
+        <meta name="description" content="Basic">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+        <!-- Call App Mode on ios devices -->
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <!-- Remove Tap Highlight on Windows Phone IE -->
+        <meta name="msapplication-tap-highlight" content="no">
+
+        <!-- base css -->
+        <link rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
+        <link rel="stylesheet" media="screen, print" href="css/app.bundle.css">
+        <link rel="stylesheet" media="screen, print" href="css/datatables.bundle.css">
+
+        <script src="javascript/vendors.bundle.js"></script>
+    </head>
+
+    <body class="mod-bg-1 ">
+        <!-- BEGIN Page Wrapper -->
+        <div class="page-wrapper">
+            <div class="page-inner">
+                <!-- BEGIN Left Aside -->
+                <aside class="page-sidebar">
+                    <div class="page-logo" style="background:white;">
+                        <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
+                            <span style="position: absolute;top: 29px;left: 59px;">Email Stuido</span>
+                            <svg viewBox="-5 0 145 115" style="display: inline-block; color: rgba(0, 0, 0, 0.87); fill: currentcolor; height: 24px; width: 24px; transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms; min-width: 50px; min-height: 50px;"> <g> <g id="Layer_1" data-name="Layer 1"> <path fill="#202e5f" d="M75.42,75.49c22.72-29.75,29.73-61.7,15.67-71.36C86.63,1.06,80.58.61,73.68,2.37c5.38-1.25,10.08-.84,13.57,1.56,11.64,8,5.52,34.85-13.67,60s-44.18,39-55.81,31S12.25,60.08,31.43,35C42.18,20.89,54.73,10.35,65.75,5.19,52.49,11.14,37.36,23.66,24.51,40.5,1.79,70.25-5.22,102.2,8.83,111.86S52.7,105.24,75.42,75.49Z"></path> <path fill="#21346a" d="M80.58,68.28,74,63.16l-.61.82A119.81,119.81,0,0,1,53.26,84.82l6.45,8.27A146.26,146.26,0,0,0,75.27,75.71Q78.09,72,80.58,68.28Z"></path> <path fill="#f26b55" d="M76.14,28.53c-6.73-2.17-12.55-2-16.33,1-9.26,7.38-2.78,29,14.47,48.38s41.27,33.31,50.53,25.93.38-32.92-16.54-52.13q1.07,1.14,2.13,2.32c20.43,22.9,27.92,48.69,16.73,57.6S90.31,109.2,69.88,86.3,42,37.61,53.15,28.7C58.35,24.56,66.67,24.8,76.14,28.53Z"></path> </g> </g></svg>
+                            <svg viewBox="0 0 50 150" style="display: block;color: rgba(0, 0, 0, 0.87);fill: currentcolor;height: 24px; /*! width: 14px; */transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;min-width: 230px;min-height: 50px; /*! opacity: 0; */position: absolute;left: 58px;top: -5px;"> <g transform="translate(-475, 20)"> <g id="Layer_1" data-name="Layer 1"> <path fill="#002e6d" d="M187.41,68h-14l-2.8,10.85h-10.5l14.35-45.64h12.32l14.35,45.64H190.21Zm-2.1-8.05-1.12-4.2c-1.26-4.55-2.45-9.94-3.71-14.7h-.28c-1.05,4.83-2.31,10.15-3.57,14.7l-1.12,4.2Z"></path> <path fill="#002e6d" d="M219.89,33.17h10.36v37h18v8.68H219.89Z"></path> <path fill="#002e6d" d="M285.83,32.33a19.18,19.18,0,0,1,13.51,6l-5.67,6.37c-2.31-2.1-4.48-3.43-7.7-3.43-6.37,0-11.34,5.53-11.34,14.7,0,9.38,4.41,14.84,11.06,14.84a11.19,11.19,0,0,0,8.68-4.06L300,72.94a18.63,18.63,0,0,1-14.49,6.72c-11.83,0-21.49-8.05-21.49-23.38C264.06,41.15,274.07,32.33,285.83,32.33Z"></path> <path fill="#002e6d" d="M320.41,33.17h10.36V50.74h15.75V33.17h10.29V78.82H346.52v-19H330.77v19H320.41Z"></path> <path fill="#002e6d" d="M380.89,33.17h28.63v8.68H391.25V51h15.54v8.61H391.25v10.5h19v8.68H380.89Z"></path> <path fill="#002e6d" d="M433.32,33.17h10.92l7.63,20.51,2.73,8h.28l2.73-8L465,33.17H476V78.82h-9.66V62.09c0-4.48.84-11.13,1.33-15.54h-.28l-3.71,10.57-7.07,17.71h-4.13l-7-17.71-3.64-10.57h-.28c.49,4.41,1.33,11.06,1.33,15.54V78.82h-9.52Z"></path> <path fill="#002e6d" d="M504.65,62.58l-13.72-29.4h11L506,43.67c1.19,3.43,2.38,6.58,3.71,10.08H510c1.26-3.5,2.59-6.65,3.85-10.08L518,33.17h10.78l-13.79,29.4V78.82H504.65Z"></path> </g> </g> </svg>
+                        </a>
+                    </div>
+
+                    <!-- BEGIN PRIMARY NAVIGATION -->
+                    <nav id="js-primary-nav" class="primary-nav" role="navigation">
+                        <ul id="js-nav-menu" class="nav-menu">
+                            <li class="active open">
+                                <a href="#">
+                                    <i class="fal fa-info-circle"></i>
+                                    <span class="nav-link-text">Santander Campaign Emails</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <span class="nav-link-text">Client</span>
+                                            <span class="">v0.0.1</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span class="nav-link-text">Prospect</span>
+                                            <span class="">v0.0.1</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-title">Tools & Components</li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fal fa-info-circle"></i>
+                                    <span class="nav-link-text">Settings</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <span class="nav-link-text">Build Notes</span>
+                                            <span class="">v0.0.1</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <!-- END PRIMARY NAVIGATION -->
+                </aside>
+                <!-- END Left Aside -->
+
+                <div class="page-content-wrapper">
+                    <!-- BEGIN Page Header -->
+                    <header class="page-header" role="banner">
+                        <!-- DOC: nav menu layout change shortcut -->
+                        <div class="hidden-md-down dropdown-icon-menu position-relative">
+                            <a href="#" class="header-btn btn js-waves-off" data-action="toggle" data-class="nav-function-hidden" title="Hide Navigation">
+                                <i class="ni ni-menu"></i>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-minify" title="Minify Navigation">
+                                        <i class="ni ni-minify-nav"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn js-waves-off" data-action="toggle" data-class="nav-function-fixed" title="Lock Navigation">
+                                        <i class="ni ni-lock-nav"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- DOC: mobile button appears during mobile width -->
+                        <div class="hidden-lg-up">
+                            <a href="#" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
+                                <i class="ni ni-menu"></i>
+                            </a>
+                        </div>
+
+                        <!-- Page Header BUTTONS -->
+                        <!-- END Page Header BUTTONS -->
+
+                    </header>
+                    <!-- END Page Header -->
+
+                    <!-- BEGIN Page Content -->
+                    <!-- the #js-page-content id is needed for some plugins to initialize -->
+                    <main id="js-page-content" role="main" class="page-content">
+
+                        <%- include('send_list.html', { google_data }); %>
+
+                    </main>
+
+                    <!-- this overlay is activated only when mobile menu is triggered -->
+                    <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div> <!-- END Page Content -->
+
+                    <!-- BEGIN Page Footer -->
+                    <footer class="page-footer" role="contentinfo">
+                        <div class="d-flex align-items-center flex-1 text-muted">
+                            <span class="hidden-md-down fw-700">Alchemy: Email Stuido</span>
+                        </div>
+                        <!--
+                        <div>
+                            <ul class="list-table m-0">
+                                <li><a href="intel_introduction.html" class="text-secondary fw-700">About</a></li>
+                                <li class="pl-3"><a href="info_app_licensing.html" class="text-secondary fw-700">License</a></li>
+                                <li class="pl-3"><a href="info_app_docs.html" class="text-secondary fw-700">Documentation</a></li>
+                                <li class="pl-3 fs-xl"><a href="https://wrapbootstrap.com/user/MyOrange" class="text-secondary" target="_blank"><i class="fal fa-question-circle" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        -->
+                    </footer>
+                    <!-- END Page Footer -->
+                </div>
+            </div>
+        </div>
+        <!-- END Page Wrapper -->
+
+
+        <script src="javascript/app.bundle.js"></script>
+        <script src="javascript/datatables.bundle.js"></script>
+    </body>
+</html>

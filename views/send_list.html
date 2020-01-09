@@ -1,0 +1,318 @@
+<style>
+.btn-primary.disabled, .btn-primary:disabled {
+    display: none;
+}
+.preview-modes {
+    padding: 20px;
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.email-preview-card {
+    transition: .3s width;
+    width: 100%;
+}
+
+.preview-send {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    z-index: 999;
+}
+
+#test-send-panel {
+    margin-bottom: 30px;
+    min-width: 300px;
+}
+
+</style>
+
+<ol class="breadcrumb page-breadcrumb">
+    <li class="breadcrumb-item"><a href="javascript:void(0);">Email Templates</a></li>
+    <li class="breadcrumb-item">Holiday Emails</li>
+    <li class="breadcrumb-item active">Send List</li>
+    <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date"></span></li>
+</ol>
+
+<div class="subheader">
+    <h1 class="subheader-title">
+        <i class='subheader-icon fal fa-table'></i> Send List: <span class='fw-300'><%- google_data.google_sheet %></span> <sup class='badge badge-primary fw-500'>External Data</sup>
+        <small>The following data has been downloaded from the linked <a target="_blank" href="https://docs.google.com/spreadsheets/d/<%- google_data.google_sheet %>/edit#gid=0">Google Sheet</a> document.</small>
+    </h1>
+</div>
+
+<div class="row">
+    <div class="col-xl-12">
+        <div id="panel-1" class="panel">
+            <div class="panel-container show">
+                <div class="panel-content">
+                    <div class="panel-tag">
+                        This table shows parsed data from the source Google Sheet document. Use this table to preview individual variations or send emails. You can change the data on the fly in the source document. Simply refresh this page to view the updated data. When previewing or sending emails, the data will aways be fetched again.
+                    </div>
+
+<!-- DATATABLE START -->
+<table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
+    <thead>
+        <tr>
+
+        <% for (var header_name of google_data.headers) { %>
+            <th><%= header_name %></th>
+        <% } %>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <%
+        for (var template_name in google_data.send_list) {
+            var all_variations = google_data.send_list[template_name];
+
+            for (var variation_name in all_variations) {
+                var variation_data = all_variations[variation_name];
+        %>
+        <tr>
+            <%
+                for (var header_name of google_data.headers) {
+    
+        %>
+            <td><%= variation_data[header_name.toLowerCase()] %></td>
+            <% } %>
+        </tr>
+        <% }} %>
+    </tbody>
+
+</table>
+<!-- DATATABLE END -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- MODAL RIGHT LARGE -->
+<div class="modal fade default-example-modal-right-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-right modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="subheader-title">
+                    <i class="subheader-icon fal fa-window"></i> <span class="preview_template_name"></span>
+                    <small class="preview_variation_name"></small>
+                </h1>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="preview-modes">
+                    <button type="button" class="btn btn-default btn-lg btn-icon waves-effect waves-themed"
+                        onclick="set_desktop_mode();">
+                        <i class="ni ni-screen-desktop"></i>
+                    </button>
+
+                    <button type="button" class="btn btn-default btn-lg btn-icon waves-effect waves-themed"
+                        onclick="set_mobile_mode();">
+                        <i class="ni ni-screen-smartphone"></i>
+                    </button>
+                </div>
+
+                <div class="preview-send">
+                    <p style="text-align: right;">
+                        <button class="btn btn-default" type="button" data-toggle="collapse"
+                            data-target="#test-send-panel">
+                            <i class="fal fa-inbox-in"></i> Test Send
+                        </button>
+                    </p>
+
+                    <div class="collapse" id="test-send-panel">
+                        <div class="card card-body">
+                            <div class="form-group">
+                                <label class="form-label" for="test_email_address_input">Email Address *</label>
+                                <input type="email" id="test_email_address_input" name="test_email_address_input" class="form-control">
+                            </div>
+                            <div style="text-align: right;">
+                                <button type="button" class="btn btn-primary" onclick="send_test_email();" 
+                                data-toggle="collapse" data-target="#test-send-panel">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="preview_email_body"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#send-modal-alert">Send Email</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MODAL RIGHT LARGE -->
+
+<!-- MODAL ALERT -->
+<div class="modal modal-alert fade" id="send-modal-alert" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Are you sure?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fal fa-times"></i></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                You are attempting to send the email to the address defined in the Google Document, not the one that may have been entered as part of a test send through this application.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="send_email();">Send Email</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END MODAL ALERT -->
+
+<script>
+
+    function exec_email_command(template_name, variation_name, email_address) {
+        const to = email_address ? email_address : "";
+        const url = `/send/${template_name}/${variation_name}/${to}`;
+
+        fetch(url).then(res => res.json()).then(json => {
+            if (json.success === true) {
+                alert(`Email sent for ${template_name}/${variation_name} ${to}`);
+            } else {
+                alert(`Email failed to send: ${template_name}/${variation_name}`);
+            }
+        })
+    }
+
+    function send_email() {
+        const { template_name, variation_name } = get_selected_info();
+        exec_email_command(template_name, variation_name);
+    }
+
+    function send_test_email() {
+        const { template_name, variation_name } = get_selected_info();
+        const email_address = $('#test_email_address_input').val();
+        if (email_address) {
+            exec_email_command(template_name, variation_name, email_address);
+            window.localStorage.setItem("test_email", email_address);
+        }
+    }
+
+    function get_selected_info() {
+        const selected = window.send_list_datatable.api().rows({ selected: true });
+        const data = selected.data();
+        const headers = <%- JSON.stringify(google_data.headers); %>;
+
+        const result = {};
+        for (var i = 0; i < headers.length; i++) {
+            result[headers[i].toLowerCase()] = data[0][i];
+        }
+
+        return result;
+    }
+
+    function set_desktop_mode() {
+        $('.email-preview-card').width('720px');
+    }
+    function set_mobile_mode() {
+        $('.email-preview-card').width('360px');
+    }
+
+    function render_preview_email_card(data) {
+        return `
+            <div class="card m-auto border email-preview-card">
+                <div class="card-header">
+                    <b>To:</b> ${ data.recipient_email_address } <br>
+                    <b>From:</b> ${ data.sender_email_address } <br><br>
+                    <b>Subject:</b> <h4 style="display:inline;">${ data.subject_line }</h4> <br>
+                </div>
+                <div class="card-body">
+                    <iframe id="email_preview_iframe" src="/preview/${data.template_name}/${data.variation_name}" frameborder="0" width="100%" height="400px"></iframe>
+                </div>
+                <div class="card-footer text-muted py-2">
+                    <button class="btn btn-primary btn-sm" type="button"
+                        onclick="$('#email_preview_iframe').attr('src','/preview/${data.template_name}/${data.variation_name}')">
+                    <span><i class="fal fa-sync mr-1"></i> Refresh</span></button>
+                </div>
+            </div>
+        `;
+    }
+
+    $(document).ready(function()
+    {
+        window.send_list_datatable = $('#dt-basic-example').dataTable({
+                responsive: true,
+
+                dom:
+                    "<'row mb-3'<'col-sm-12 col-md-6 d-flex align-items-center justify-content-start'f><'col-sm-12 col-md-6 d-flex align-items-center justify-content-end'B>>" +
+                    "<'row'<'col-sm-12'tr>>" +
+                    "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>",
+
+                select: 'single',
+
+                buttons: [
+                    {
+                        extend: 'selected',
+                        text: '<i class="fal fa-eye"></i> Preview',
+                        name: 'preview',
+                        className: 'btn-primary btn-sm mr-1',
+                        action: function ( e, dt, node, config ) {
+                            const data = get_selected_info();
+                            
+                            $('.preview_template_name').text(`${data.template_name}`);
+                            $('.preview_variation_name').text(`${data.variation_name}`);
+
+                            $('.preview_email_body').html(render_preview_email_card(data));
+
+                            const email_address = window.localStorage.getItem("test_email");
+                            $('#test_email_address_input').val(email_address);
+
+                            $('.default-example-modal-right-lg').modal({});
+
+                        }
+                    },
+                    {
+                        text: '<i class="fal fa-images"></i> Make Mobile Images',
+                        name: 'small-images',
+                        className: 'btn-default btn-sm mr-1',
+                        action: function ( e, dt, node, config ) {
+                            fetch('/build/all/300');
+                        }
+                    },
+                    {
+                        text: '<i class="fal fa-images"></i> Make Desktop Images',
+                        name: 'small-images',
+                        className: 'btn-default btn-sm mr-1',
+                        action: function ( e, dt, node, config ) {
+                            fetch('/build/all/600');
+                        }
+                    },
+                    /*
+                    {
+                        extend: 'selected',
+                        text: '<i class="fal fa-inbox-out"></i> Send',
+                        name: 'edit',
+                        className: 'btn-primary btn-sm mr-1',
+                        action: function() {
+                            const data = get_selected_info();
+                            if (data.to) {
+                                send_email();
+                            }
+                        }
+                    },
+                    */
+                ]
+            });
+    });
+
+</script>

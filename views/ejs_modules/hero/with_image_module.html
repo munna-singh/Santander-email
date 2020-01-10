@@ -17,7 +17,9 @@
     <mj-text css-class="body-copy padding-x" mj-class="color-gray"><%= data.hero_bodycopy_text %></mj-text>
     <mj-spacer height="30px" /> 
     <!--Hero Button-->
+    <% if (data.hero_button_text.length) { %>
     <mj-button align="left" css-class="hero-button padding-x" mj-class="cta-bttn <%= data.hero_button_style %>" href="#"><%= data.hero_button_text %></mj-button>
+    <% } %>
   </mj-column>
 </mj-section>
 <!-- HERO MODULE ENDS HERE -->

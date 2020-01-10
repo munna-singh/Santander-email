@@ -8,16 +8,16 @@
 <mj-section background-color="#ffffff">
   <mj-column>
     <!--Hero Body Copy-->
-    <mj-text padding="0 60px" mj-class="santander-headline primary-red"><%= data.hero_title %></mj-text>
+    <mj-text css-class="padding-x" mj-class="santander-headline primary-red"><%= data.hero_title %></mj-text>
     <mj-spacer height="20px" />
     <% if (data.user_name.length) { %> 
-    <mj-text padding="0 60px" css-class="hero-content" mj-class="gray">Hi <span style="font-weight:bold"><%= data.user_name %>,</span></mj-text>
+    <mj-text css-class="body-copy padding-x" mj-class="color-gray">Hi <span style="font-weight:bold"><%= data.user_name %>,</span></mj-text>
     <mj-spacer height="20px" /> 
     <% } %>
-    <mj-text padding="0 60px" css-class="hero-content" mj-class="gray"><%= data.hero_bodycopy_text %></mj-text>
+    <mj-text css-class="body-copy padding-x" mj-class="color-gray"><%= data.hero_bodycopy_text %></mj-text>
     <mj-spacer height="30px" /> 
     <!--Hero Button-->
-    <mj-button padding="0 60px" align="left" css-class="hero-button" background-color="#ec0000" href="#" border-radius="0" font-size="18px" color="#ffffff" line-height="26px"><%= data.hero_button_text %></mj-button>
+    <mj-button align="left" css-class="hero-button padding-x" mj-class="cta-bttn <%= data.hero_button_style %>" href="#"><%= data.hero_button_text %></mj-button>
   </mj-column>
 </mj-section>
 <!-- HERO MODULE ENDS HERE -->

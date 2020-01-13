@@ -8,17 +8,17 @@
 <mj-section background-color="#ffffff">
   <mj-column>
     <!--Hero Body Copy-->
-    <mj-text css-class="padding-x" mj-class="santander-headline primary-red"><%= data.hero_title %></mj-text>
+    <mj-text css-class="p-x" mj-class="h-t c-r"><%= data.hero_title %></mj-text>
     <mj-spacer height="20px" />
     <% if (data.user_name.length) { %> 
-    <mj-text css-class="body-copy padding-x" mj-class="color-gray">Hi <span style="font-weight:bold"><%= data.user_name %>,</span></mj-text>
+    <mj-text css-class="b-c p-x" mj-class="c-g">Hi <span style="font-weight:bold"><%= data.user_name %>,</span></mj-text>
     <mj-spacer height="20px" /> 
     <% } %>
-    <mj-text css-class="body-copy padding-x" mj-class="color-gray"><%= data.hero_bodycopy_text %></mj-text>
+    <mj-text css-class="b-c p-x" mj-class="c-g"><%= data.hero_bodycopy_text %></mj-text>
     <mj-spacer height="30px" /> 
     <!--Hero Button-->
     <% if (data.hero_button_text.length) { %>
-    <mj-button align="left" css-class="hero-button padding-x" mj-class="cta-bttn <%= data.hero_button_style %>" href="#"><%= data.hero_button_text %></mj-button>
+    <mj-button align="left" css-class="h-b p-x" mj-class="btn <%= data.hero_button_style %>" href="<%= data.hero_button_link%>"><%= data.hero_button_text %></mj-button>
     <% } %>
   </mj-column>
 </mj-section>

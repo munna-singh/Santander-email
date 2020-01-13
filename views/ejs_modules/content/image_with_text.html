@@ -1,0 +1,14 @@
+<mj-section background-color="#ffffff">
+    <mj-column padding-left="58px" padding-right="2px">
+        <mj-text mj-class="sht clr"><%= data.image_subtitle %> </mj-text>
+        <mj-spacer height="15px" />
+        <mj-text css-class="bdc pdr" mj-class="clg"><%= data.image_text_content %></mj-text>
+        <mj-spacer height="25px" />
+        <% if (data.image_button_text) { %>
+            <mj-button mj-class="btn <%= data.image_text_button_style %>" css-class="bttn-branch" width="100%" href="<%= data.image_button_link %>"><%= data.image_button_text %></mj-button>
+        <% } %>
+    </mj-column>
+    <mj-column>
+        <mj-image width="300px" align="right" src="<%= data.content_right_image %>"></mj-image>
+    </mj-column>      
+</mj-section>  

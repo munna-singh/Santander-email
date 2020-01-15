@@ -1,4 +1,8 @@
 <mj-section background-color="#ffffff">
+     <!-- Top Spacer-->
+     <% if (data.image_content_spacer_type == 'TopMargin' || data.image_content_spacer_type == 'Both') { %>
+      <mj-spacer height="60px" /> 
+    <% } %>
     <mj-column padding-left="58px" padding-right="2px">
         <mj-text mj-class="sht clr"><%= data.image_subtitle %> </mj-text>
         <mj-spacer height="15px" />
@@ -11,4 +15,13 @@
     <mj-column>
         <mj-image width="300px" align="right" src="<%= data.content_right_image %>"></mj-image>
     </mj-column>      
-</mj-section>  
+</mj-section>
+  <!-- Bottom Spacer-->
+  <mj-section>
+        <mj-column>
+            <% if (data.image_content_spacer_type == 'BottomMargin' || data.image_content_spacer_type == 'Both') { %>
+              <mj-spacer height="60px" /> 
+            <% } %>
+            </mj-column>
+          </mj-column>
+        </mj-section>  

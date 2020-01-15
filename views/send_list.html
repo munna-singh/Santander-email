@@ -67,8 +67,8 @@
 
     <tbody>
         <%
-        for (var template_name in google_data.send_list) {
-            var all_variations = google_data.send_list[template_name];
+        for (var template_name in google_data.data) {
+            var all_variations = google_data.data[template_name];
 
             for (var variation_name in all_variations) {
                 var variation_data = all_variations[variation_name];

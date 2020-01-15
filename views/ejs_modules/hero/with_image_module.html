@@ -1,14 +1,6 @@
 <!-- HERO MODULE STARTS HERE -->
-  <!-- Top Spacer-->
-<mj-section>
-<mj-column>
-    <% if (data.hero_spacer_type == 'TopMargin' || data.hero_spacer_type == 'Both') { %>
-      <mj-spacer height="60px" /> 
-    <% } %>
-    </mj-column>
-  </mj-column>
-</mj-section>
 <!-- Hero image-->
+<mj-wrapper css-class="<%= data.hero_spacer_type %>">
 <mj-section>
     <mj-column>
       <mj-image src="<%= data.hero_image %>"></mj-image>
@@ -29,10 +21,8 @@
     <!--Hero Button-->
     <mj-button align="left" css-class="hbtn pdx" mj-class="btn <%= data.hero_button_style %>" href="<%= data.hero_button_link%>"><%= data.hero_button_text %></mj-button>
     <% } %>
-    <!-- Bottom Spacer -->
-    <% if (data.hero_spacer_type == 'BottomMargin' || data.hero_spacer_type == 'Both') { %>
-      <mj-spacer height="60px" /> 
-    <% } %>
   </mj-column>
 </mj-section>
+</mj-wrapper>
+
 <!-- HERO MODULE ENDS HERE -->

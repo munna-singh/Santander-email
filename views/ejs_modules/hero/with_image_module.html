@@ -1,5 +1,6 @@
 <!-- HERO MODULE STARTS HERE -->
 <!-- Hero image-->
+<mj-wrapper css-class="<%= data.hero_spacer_type %>">
 <mj-section>
     <mj-column>
       <mj-image src="<%= data.hero_image %>"></mj-image>
@@ -15,11 +16,13 @@
     <mj-spacer height="20px" /> 
     <% } %>
     <mj-text css-class="bdc pdx" mj-class="clg"><%= data.hero_bodycopy_text %></mj-text>
+    <% if (data.hero_button_text.length) { %>
     <mj-spacer height="30px" /> 
     <!--Hero Button-->
-    <% if (data.hero_button_text.length) { %>
     <mj-button align="left" css-class="hbtn pdx" mj-class="btn <%= data.hero_button_style %>" href="<%= data.hero_button_link%>"><%= data.hero_button_text %></mj-button>
     <% } %>
   </mj-column>
 </mj-section>
+</mj-wrapper>
+
 <!-- HERO MODULE ENDS HERE -->

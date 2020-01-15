@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Setup data source
 // -----------------------------------------------------------------------------
 const google_sheet = require('./app/google-sheet.js')(config.google_sheet, config.google_api_key, 5000)
-//google_sheet.get_send_list().then(console.log);
+//google_sheet.get_data().then(console.log);
 
 // -----------------------------------------------------------------------------
 // Setup email provider
@@ -44,14 +44,14 @@ const chrome = require('./app/headless-chrome.js')(preview_image_path)
 // Routes setup
 // -----------------------------------------------------------------------------
 app.get('/', function(req, res, next) {
-  google_sheet.get_send_list().then(data => {
+  google_sheet.get_data().then(data => {
     res.render('dashboard', { google_data: data });
   })
 });
 
 app.get('/send/all', function(req, res, next) {
   /*
-  google_sheet.get_send_list().then(data => {
+  google_sheet.get_data().then(data => {
     sendgrid.send_all(data.send_list, (variation_data, cb) => {
       app.render(`email_templates/${variation_data.template_name}`, { data: variation_data }, cb);
     });
@@ -63,7 +63,7 @@ app.get('/send/all', function(req, res, next) {
 
 app.get('/build/all/:width', function(req, res, next) {
   const width = JSON.parse(req.params.width);
-  google_sheet.get_send_list().then(data => {
+  google_sheet.get_data().then(data => {
     chrome.get_all(data.send_list, (variation_data, cb) => {
       app.render(`email_templates/${variation_data.template_name}`, { data: variation_data }, cb);
     }, width);

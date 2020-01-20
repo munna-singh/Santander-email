@@ -1,0 +1,37 @@
+<!-- Hero Banner-->
+<% switch (data.hero_banner_type) {
+    case 'Background-image' : %>
+<mj-section css-class="<%= data.hero_banner_spacer_type %>" background-url="<%= data.hero_banner_image %>" background-size="cover" background-repeat="no-repeat">
+        <mj-column>
+            <mj-spacer height="40px" />
+            <mj-text css-class="pdx" mj-class="hlt clr"><%- data.hero_banner_title %></mj-text>
+            <% if (data.hero_banner_button_text) { %>
+                <mj-spacer height="30px" />
+                <mj-button align="left" css-class="hbtn pdx" mj-class="btn <%= data.hero_banner_button_style %>" href="<%= data.hero_banner_button_link%>"><%= data.hero_banner_button_text %></mj-button>
+            <% } %>
+                <mj-spacer height="<%= data.hero_banner_button_text ? '80px' : '90px' %>" />
+        </mj-column>              
+</mj-section>
+<% break;
+    case 'Default' : %>
+    <mj-section css-class="<%= data.hero_banner_spacer_type %>">
+        <mj-column>
+            <mj-image src="<%= data.hero_banner_image %>"></mj-image>
+        </mj-column>            
+    </mj-section>
+    <% break;
+    case 'Without-bg-image' : %>
+    <mj-section css-class="<%= data.hero_banner_spacer_type %>">
+            <mj-column>
+                <mj-spacer height="40px" />
+                <mj-text css-class="pdx" mj-class="hlt clr"><%- data.hero_banner_title %></mj-text>
+            <% if (data.hero_button_text) { %>
+                <mj-spacer height="30px" />
+                <mj-button align="left" css-class="hbtn pdx" mj-class="btn <%= data.hero_banner_button_style %>" href="<%= data.hero_banner_button_link%>"><%= data.hero_banner_button_text %></mj-button>
+            <% } %>
+                <mj-spacer height="30px" />
+            </mj-column>             
+    </mj-section>
+    <% break;
+} %>  
+<!-- Hero Banner ENDS HERE -->

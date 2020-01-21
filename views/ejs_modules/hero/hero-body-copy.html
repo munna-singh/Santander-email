@@ -10,23 +10,48 @@
                 <mj-text css-class="pdx" mj-class="hlt clr"><%- data.hero_body_copy_title %></mj-text>
                 <mj-spacer height="20px" />
             </mj-column>     
-        </mj-section>  
+        </mj-section>
         <mj-section>
+            <mj-column>
+                    <% if (data.user_name) { %> 
+                        <mj-text css-class="bdc pdx" mj-class="clg">Hi <span style="font-weight:bold"><%- data.user_name %>,</span></mj-text>
+                        <mj-spacer height="20px" /> 
+                    <% } %>
+                    <% if (data.hero_body_subtitle_text) { %> 
+                        <mj-text css-class="bdc pdx" mj-class="clg"><%- data.hero_body_subtitle_text %></mj-text>
+                        <mj-spacer height="20px" /> 
+                    <% } %>
+            </mj-column>
+        </mj-section>
+        <% if (hero_body_copy_image_orientation === 'Right') { %>   
+        <mj-section css-class="hbx" text-align="left">
           <mj-column>
-            <% if (data.user_name) { %> 
-            <mj-text css-class="bdc" mj-class="clg">Hi <span style="font-weight:bold"><%- data.user_name %>,</span></mj-text>
-            <mj-spacer height="20px" /> 
-            <% } %>
-            <mj-text css-class="bdc hpdr hmb hbx" mj-class="clg"><%- data.hero_body_copy_text %></mj-text>
+            <mj-text css-class="bdc hpdr hmb" mj-class="clg"><%- data.hero_body_copy_text %></mj-text>
             <% if (data.hero_body_copy_button_text) { %>
                 <!--Hero Button-->
-                <mj-button align="left" css-class="hbtn hbx" mj-class="btn <%= data.hero_body_copy_button_style %>" href="<%= data.hero_body_copy_button_link%>"><%= data.hero_body_copy_button_text %></mj-button>
+                <mj-spacer height="30px" /> 
+                <mj-button align="left" width="100%" mj-class="btn <%= data.hero_body_copy_button_style %>" href="<%= data.hero_body_copy_button_link%>"><%= data.hero_body_copy_button_text %></mj-button>
                 <% } %>
           </mj-column>
           <mj-column css-class="himg">
-              <mj-image src="<%= data.hero_right_image %>"></mj-image>
+              <mj-image src="<%= data.hero_body_copy_image %>"></mj-image>
           </mj-column>
         </mj-section>
+          <%} else { %>
+        <mj-section css-class="pdx" text-align="left">
+            <mj-column css-class="himgl">
+                <mj-image src="<%= data.hero_body_copy_image %>"></mj-image>
+            </mj-column>
+            <mj-column>
+                <mj-text css-class="bdc hpdr hmb" mj-class="clg"><%- data.hero_body_copy_text %></mj-text>
+                <% if (data.hero_body_copy_button_text) { %>
+                <!--Hero Button-->
+                    <mj-spacer height="30px" /> 
+                    <mj-button align="left" width="100%" mj-class="btn <%= data.hero_body_copy_button_style %>" href="<%= data.hero_body_copy_button_link%>"><%= data.hero_body_copy_button_text %></mj-button>
+                        <% } %>
+                </mj-column>
+        </mj-section>
+        <% } %>
     </mj-wrapper>
 
         <%} else { %>
@@ -40,10 +65,14 @@
                           <!--Hero Body Copy-->
                         <mj-text css-class="pdx" mj-class="hlt clr"><%= data.hero_body_copy_title %></mj-text>
                         <mj-spacer height="20px" />
-                    <% if (data.user_name) { %> 
-                        <mj-text css-class="bdc pdx" mj-class="clg">Hi <span style="font-weight:bold"><%= data.user_name %>,</span></mj-text>
-                        <mj-spacer height="20px" /> 
-                    <% } %>
+                        <% if (data.user_name) { %> 
+                            <mj-text css-class="bdc pdx" mj-class="clg">Hi <span style="font-weight:bold"><%- data.user_name %>,</span></mj-text>
+                            <mj-spacer height="20px" /> 
+                        <% } %>
+                        <% if (data.hero_body_subtitle_text) { %> 
+                            <mj-text css-class="bdc pdx" mj-class="clg"><%- data.hero_body_subtitle_text %></mj-text>
+                            <mj-spacer height="20px" /> 
+                        <% } %>
                     <mj-text css-class="bdc pdx" mj-class="clg"><%= data.hero_body_copy_text %></mj-text>
                     <% if (data.hero_hero_body_copy_button_text) { %>
                         <mj-spacer height="30px" /> 

@@ -19,6 +19,7 @@
 </mj-attributes>
 <!-- INTERNAL STYLESHEET STARTS HERE -->
 <mj-style>
+
     .logo img {
         padding: 22px 30px 32px !important;
     }
@@ -102,6 +103,9 @@
     .hmb p {
       margin: 0 0 30px 0 !important;
     }
+    .hmb p:last-child {
+      margin: 0 !important;
+    }
     .hbx {
       padding-left: 60px !important;
       padding-right: 60px !important;
@@ -133,7 +137,15 @@
     .imo {
       opacity: <%= data.image_module_opacity %>;
     }
-    @media (min-width:480px) {
+  .bltimg img {
+    width: auto !important;
+  }
+  .blct span {
+    color: #ec0000 !important;
+  }
+    
+@media (min-width:480px) {
+
       .logo img {
         padding: 20px 60px !important;
       }

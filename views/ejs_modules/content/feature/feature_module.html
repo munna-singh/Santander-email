@@ -1,0 +1,28 @@
+<% if (data.feature_module_type == 'with-icons') { %>
+    <mj-section>
+    <mj-column>
+        <mj-text>With-Icons</mj-text>
+   
+    </mj-column>
+    <mj-column>
+        <mj-text><%= JSON.parse(data.feature_module_data).title %></mj-text>
+   
+    </mj-column>
+</mj-section>
+<%} else { %>
+<mj-section>
+    <mj-column css-class="fimgl">
+         <mj-image src="<%= JSON.parse(data.feature_module_data).img_url %>" css-class="bltimg"></mj-image>
+    </mj-column>
+    <mj-column>
+        <mj-text css-class="fpr" mj-class="sht clr"><%= data.feature_module_title %></mj-text>
+        <mj-spacer height="20px" />
+        <mj-text css-class="bdc fpr" mj-class="clr"><%- JSON.parse(data.feature_module_data).title %></mj-text>
+        <mj-text css-class="bdc hmb fpr" mj-class="clg"><%- JSON.parse(data.feature_module_data).body_copy %></mj-text>
+        <% if (data.feature_module_button_text) { %>
+            <mj-spacer height="30px" />
+            <mj-button width="100%" css-class="fpr" mj-class="btn <%= data.feature_module_button_style %>" href="<%= data.feature_module_button_link%>"><%= data.feature_module_button_text %></mj-button>
+        <% } %>
+   </mj-column>
+</mj-section>
+<% } %>

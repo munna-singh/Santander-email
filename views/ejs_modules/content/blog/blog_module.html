@@ -1,0 +1,20 @@
+<mj-section css-class="<%= data.blog_spacer_type %>" background-color="<%= data.blog_module_sidebar_color %>" padding-left="30px">
+    <mj-column background-color="white" padding-left="30px" padding-right="60px">
+        <mj-image src="<%= data.blog_title_image %>" css-class="bltimg"></mj-image>
+        <mj-spacer height="15px" /> 
+        <mj-text mj-class="sht clr"><%- data.blog_title %></mj-text>
+        <mj-spacer height="10px" /> 
+        <mj-text css-class="bdc blct" mj-class="clg"><%- data.blog_content %></mj-text>
+        <mj-spacer height="20px" /> 
+        <mj-image src="<%= data.blog_image %>"></mj-image>
+    </mj-column>
+</mj-section>
+<mj-section>
+    <mj-column>
+        <% if (data.blog_button_text) { %>
+            <mj-spacer height="30px" /> 
+            <!--Hero Button-->
+            <mj-button align="left" css-class="hbtn pdx" mj-class="btn <%= data.blog_button_style %>" href="<%= data.blog_button_link%>"><%= data.blog_button_text %></mj-button>
+        <% } %>
+    </mj-column>
+</mj-section>

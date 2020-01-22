@@ -1,0 +1,27 @@
+<mj-section css-class="<%= data.feature_module_spacer_type %>">
+    <mj-column>
+            <mj-text css-class="pdx" mj-class="sht clr"><%= data.feature_module_title %></mj-text>
+            <mj-spacer height="30px" />
+            <mj-table css-class="pdx">
+                    <tr>
+                <% withIco.forEach((el, index) =>{ %>
+            
+                    <% if(index && index % 3 === 0 ){ %>
+                     </tr>
+                     <tr>
+                    <% } %>
+                        
+                        <td align="center" style="text-align: center; padding-bottom: 30px;">
+                            <div><img src="<%= el.img_url %>"></div>
+                            <div class="bdcy rcl"><%= el.title %></div>
+                                
+                            </td>
+                        
+                        <% }) %>
+                        </tr>    
+               </mj-table>
+               <% if (data.feature_module_button_text) { %>
+                <mj-button align="left" css-class="hbtn pdx" mj-class="btn <%= data.feature_module_button_style %>" href="<%= data.feature_module_button_link%>"><%= data.feature_module_button_text %></mj-button>
+            <% } %>
+    </mj-column>
+</mj-section>

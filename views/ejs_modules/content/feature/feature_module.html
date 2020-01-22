@@ -1,0 +1,11 @@
+<% const moduleData = () => JSON.parse(data.feature_module_data); %>
+
+<% if (data.feature_module_type == 'iconography') { %>
+    <%- include('./iconography.html', {withIco: moduleData()}); %>
+<% } %>
+<% if (data.feature_module_type == 'with-image') { %>
+    <%- include('./with-image.html', {withImg: moduleData()[0]}); %> 
+<% } %>
+<% if (data.feature_module_type == 'without-body-copy') { %>
+    <%- include('./without_body_copy.html', {withIco: moduleData()}); %> 
+<% } %>

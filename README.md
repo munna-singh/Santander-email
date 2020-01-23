@@ -7,6 +7,15 @@
 
 ### Steps for developer
 - Download the file from git hub (https://github.com/Gale43/Santander-email) on local machine
+- Create a file called config.json in root folder. The file should have below entry
+`
+    {
+    "sendgrid_api_key": "",
+    "google_sheet": "",
+    "google_api_key": ""
+    }
+
+`
 - Using text editor like VS Code, navigate to downloaded folder
 - Run "npm install"
 - Above command download and install all required node modules.

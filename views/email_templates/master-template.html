@@ -1,0 +1,48 @@
+<%
+const get_path = function(module) {
+      var modules = {
+            'lets_chat' : '../ejs_modules/content/lets-chat/lets_chat_module.html',
+            'learn_more' : '../ejs_modules/content/learn-more/learn_more_module.html',
+            'image_module' : '../ejs_modules/content/image/image_module.html',
+            'blog_module' : '../ejs_modules/content/blog/blog_module.html',
+            'feature_module' : '../ejs_modules/content/feature/feature_module.html'
+      };
+      return modules[module.toLowerCase()];
+};
+
+const get_required_modules = function(){
+      var empty_array = [];
+      var requiredModules = data.required_content_module;
+      if(requiredModules) {
+            empty_array =  requiredModules.split(',');
+      } 
+      return empty_array; 
+}
+%>
+
+
+<mjml>
+    <mj-head>
+        <!-- MOBILE BREAKPOINT -->
+        <mj-breakpoint width="480px" />
+        <!-- INBOX PREVIEW -->
+        <mj-preview></mj-preview>
+        <!-- TITLE -->
+        <mj-title>GALE</mj-title> 
+        <%- include('../ejs_modules/style.html', data); %>
+    </mj-head>
+    <mj-body>
+      <%- include('../ejs_modules/logo/logo.html', data); %>
+      <%- include('../ejs_modules/hero/hero-banner.html', data); %>
+      <%- include('../ejs_modules/hero/hero-body-copy.html', data); %>
+     
+      <% get_required_modules().forEach(el =>{ %>
+                  <%- include(get_path(el), data); %>
+            <% }) 
+      %>
+
+      <%- include('../ejs_modules/footer/footer.html', data); %>
+      <%- include('../ejs_modules/footer/footer_menu.html', data); %>
+      <%- include('../ejs_modules/footer/legal.html', data); %>
+    </mj-body>
+  </mjml>

@@ -63,7 +63,7 @@
             <% } %>
                     <mj-column>
                           <!--Hero Body Copy-->
-                        <mj-text css-class="pdx" mj-class="hlt clr"><%= data.hero_body_copy_title %></mj-text>
+                        <mj-text css-class="pdx" mj-class="hlt clr"><%- data.hero_body_copy_title %></mj-text>
                         <mj-spacer height="20px" />
                         <% if (data.user_name) { %> 
                             <mj-text css-class="bdc pdx" mj-class="clg">Hi <span style="font-weight:bold"><%- data.user_name %>,</span></mj-text>
@@ -73,7 +73,7 @@
                             <mj-text css-class="bdc pdx" mj-class="clg"><%- data.hero_body_copy_subtitle_text %></mj-text>
                             <mj-spacer height="20px" /> 
                         <% } %>
-                    <mj-text css-class="bdc pdx" mj-class="clg"><%= data.hero_body_copy_text %></mj-text>
+                    <mj-text css-class="bdc pdx" mj-class="clg"><%- data.hero_body_copy_text %></mj-text>
                     <% if (data.hero_body_copy_button_text) { %>
                         <mj-spacer height="30px" /> 
                           <!--Hero Button-->

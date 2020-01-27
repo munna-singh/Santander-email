@@ -1,0 +1,23 @@
+<mj-section css-class="<%= data.survey_module_spacer_type %>">
+    <mj-column padding="0 60px" border= "5px solid #ec0000">
+        <mj-spacer height="50px" />
+        <mj-text mj-class="sht clr"><%- data.survey_module_title %></mj-text>
+        <mj-spacer height="30px" />
+        <mj-table padding="0">
+            <% JSON.parse(data.survey_module_data).forEach(el =>{ %>
+            <tr>
+                <td class="bdcy" style="background: url(http://via.placeholder.com/22px) no-repeat; padding-left: 37px; vertical-align: top;"><%- el.options %></td>
+            </tr>
+            <tr>
+                <td height="20" style="line-height:20px">&nbsp;</td>
+            </tr>
+            <% }) %>
+        </mj-table>
+        <% if (data.survey_module_button_text) { %>
+            <mj-spacer height="10px" /> 
+            <!--Hero Button-->
+            <mj-button align="left" css-class="hbtn" mj-class="btn <%= data.survey_module_button_style %>" href="<%= data.survey_module_button_link%>"><%= data.survey_module_button_text %></mj-button>
+            <mj-spacer height="50px" /> 
+        <% } %>
+    </mj-column>
+</mj-section>

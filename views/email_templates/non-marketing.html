@@ -35,6 +35,9 @@
       <% } %>
       <%- include('../ejs_modules/footer/footer.html', data); %>
       <%- include('../ejs_modules/footer/footer_menu.html', data); %>
+      <% if (data.disclosure_module_display_type == 'show') { %>
+            <%- include('../ejs_modules/footer/disclosure_module.html', data); %>
+      <% } %>
       <%- include('../ejs_modules/footer/legal.html', data); %>
     </mj-body>
   </mjml>

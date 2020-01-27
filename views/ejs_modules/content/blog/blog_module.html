@@ -1,4 +1,5 @@
-<mj-section css-class="<%= data.blog_spacer_type %>" background-color="<%= data.blog_module_sidebar_color %>" padding-left="30px">
+<mj-wrapper css-class="<%= data.blog_spacer_type %>">
+<mj-section background-color="<%= data.blog_module_sidebar_color %>" padding-left="30px">
     <mj-column background-color="white" padding-left="30px" padding-right="60px">
         <mj-image src="<%= data.blog_title_image %>" css-class="bltimg"></mj-image>
         <mj-spacer height="15px" /> 
@@ -18,3 +19,4 @@
         <% } %>
     </mj-column>
 </mj-section>
+</mj-wrapper>

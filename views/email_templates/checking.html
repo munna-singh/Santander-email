@@ -1,0 +1,35 @@
+<mjml>
+    <mj-head>
+        <!-- MOBILE BREAKPOINT -->
+        <mj-breakpoint width="480px" />
+        <!-- INBOX PREVIEW -->
+        <mj-preview></mj-preview>
+        <!-- TITLE -->
+        <mj-title>GALE</mj-title> 
+        <%- include('../ejs_modules/style.html', data); %>
+    </mj-head>
+    <mj-body>
+      <%- include('../ejs_modules/logo/logo.html', data); %>
+      <%- include('../ejs_modules/hero/hero-banner.html', data); %>
+      <%- include('../ejs_modules/hero/hero-body-copy.html', data); %>
+      <% if (data.feature_module_display_type == 'show') { %>
+            <%- include('../ejs_modules/content/feature/feature_module.html', data); %>
+      <% } %>
+      <% if (data.other_options_module_display_type == 'show') { %>
+            <%- include('../ejs_modules/content/other-options/other_options_module.html', data); %>
+      <% } %>
+      <% if (data.step_by_step_module_display_type == 'show') { %>
+            <%- include('../ejs_modules/content/step-by-step/step_by_step_module.html', data); %>
+      <% } %>
+      <% if (data.info_module_display_type == 'show') { %>
+            <%- include('../ejs_modules/content/common/divider_grey_module.html', data); %>
+            <%- include('../ejs_modules/content/step-by-step/info_module.html', data); %>
+      <% } %>
+      <%- include('../ejs_modules/footer/footer.html', data); %>
+      <%- include('../ejs_modules/footer/footer_menu.html', data); %>
+      <% if (data.disclosure_module_display_type == 'show') { %>
+            <%- include('../ejs_modules/footer/disclosure_module.html', data); %>
+      <% } %>
+      <%- include('../ejs_modules/footer/legal.html', data); %>
+    </mj-body>
+  </mjml>

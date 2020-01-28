@@ -55,11 +55,11 @@
     </mj-wrapper>
 
         <%} else { %>
-        <mj-wrapper css-class="<%= data.hero_body_copy_spacer_type %>">
+        <mj-wrapper>
             <% if (data.hero_body_copy_bg_color) { %>
-                <mj-section  background-color="<%= data.hero_body_copy_bg_color %>">
+                <mj-section css-class="<%= data.hero_body_copy_spacer_type %>" background-color="<%= data.hero_body_copy_bg_color %>">
             <%} else { %>
-                <mj-section background-url="<%= data.hero_body_copy_bg_image %>" background-size="cover" background-repeat="no-repeat">
+                <mj-section background-url="<%= data.hero_body_copy_bg_image %>" css-class="<%= data.hero_body_copy_spacer_type %>" background-size="cover" background-repeat="no-repeat">
             <% } %>
                     <mj-column>
                           <!--Hero Body Copy-->

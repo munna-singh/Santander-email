@@ -1,0 +1,16 @@
+<%
+var info = function() {
+ data.step_by_step_module_title = data.info_module_title;
+ data.step_by_step_module_image = data.info_module_image;
+ data.step_by_step_module_subtitle = data.info_module_subtitle;
+ data.step_by_step_module_content = data.info_module_content;
+ data.step_by_step_module_button_text = data.info_module_button_text;
+ data.step_by_step_module_button_style = data.info_module_button_style;
+ data.step_by_step_module_button_link = data.info_module_button_link;
+ data.step_by_step_module_spacer_type = data.info_module_spacer_type;
+ data.step_by_step_module_data = '[]';
+ return data;
+}
+%>
+
+<%- include('./step_by_step_module.html', {data:info()}); %> 

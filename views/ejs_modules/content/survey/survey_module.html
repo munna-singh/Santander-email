@@ -6,10 +6,12 @@
         <mj-table padding="0">
             <% JSON.parse(data.survey_module_data).forEach(el =>{ %>
             <tr>
-                <td class="bdcy" style="background: url(http://via.placeholder.com/22px) no-repeat; padding-left: 37px; vertical-align: top;"><%- el.options %></td>
+                
+                <td width="37" style="width: 37px; text-align: left;vertical-align: top;"><a href="<%= el.link %>" target="_blank"><span class="rdio"></span></a></td>
+                <td class="bdcy surv" style="vertical-align: top;"><a href="<%= el.link %>" target="_blank"><%- el.options %></a></td>
             </tr>
             <tr>
-                <td height="20" style="line-height:20px">&nbsp;</td>
+                <td height="20" colspan="2" style="line-height:20px">&nbsp;</td>
             </tr>
             <% }) %>
         </mj-table>

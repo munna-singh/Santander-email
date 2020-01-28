@@ -1,8 +1,8 @@
 <mj-section css-class="<%= data.lets_chat_content_spacer_type %>" background-color="#ffffff">
     <mj-column padding-left="58px" padding-right="2px">
-        <mj-text mj-class="sht clr"><%= data.lets_chat_subtitle %> </mj-text>
+        <mj-text mj-class="sht clr"><%- data.lets_chat_subtitle %> </mj-text>
         <mj-spacer height="15px" />
-        <mj-text css-class="bdc pdr" mj-class="clg"><%= data.lets_chat_content %></mj-text>
+        <mj-text css-class="bdc pdr" mj-class="clg"><%- data.lets_chat_content %></mj-text>
         <mj-spacer height="25px" />
         <% if (data.lets_chat_button_text) { %>
             <mj-button mj-class="btn <%= data.lets_chat_text_button_style %>" css-class="bttn-branch" width="100%" href="<%= data.lets_chat_button_link %>"><%= data.lets_chat_button_text %></mj-button>

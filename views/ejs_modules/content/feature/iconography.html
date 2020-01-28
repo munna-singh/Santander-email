@@ -1,14 +1,14 @@
 <mj-section css-class="<%= data.feature_module_spacer_type %>">
     <mj-column>
-        <mj-text css-class="pdx" mj-class="sht clr"><%= data.feature_module_title %></mj-text>
+        <mj-text css-class="pdx" mj-class="sht clr"><%- data.feature_module_title %></mj-text>
         <mj-spacer height="30px" />
         <mj-table css-class="pdx">
             <% withIco.forEach(el =>{ %>
             <tr>
                 <td style="padding-right: 30px;"><img src="<%= el.img_url %>"></td>
                 <td>
-                    <div class="bdcy rcl"><%= el.title %></div>
-                    <div class="bdcy"><%= el.body_copy %></div>
+                    <div class="bdcy rcl"><%- el.title %></div>
+                    <div class="bdcy"><%- el.body_copy %></div>
                 </td>
             </tr>
             <tr>

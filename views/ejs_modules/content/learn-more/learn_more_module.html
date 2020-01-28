@@ -1,9 +1,9 @@
 <mj-section css-class="<%= data.learn_more_spacer_type %>" background-color="<%= data.learn_more_module_type === 'Type-A' ? '#deedf2' : 'white' %>">
     <mj-column>
         <mj-spacer height="30px" />
-        <mj-text css-class="pdx" mj-class="sht clr"><%= data.learn_more_title %></mj-text>
+        <mj-text css-class="pdx" mj-class="sht clr"><%- data.learn_more_title %></mj-text>
         <mj-spacer height="20px" />
-        <mj-text css-class="bdc pdx" mj-class="<%= data.learn_more_module_type === 'Type-A' ? 'clbg' : 'clg' %>"><%= data.learn_more_content %></mj-text>
+        <mj-text css-class="bdc pdx" mj-class="<%= data.learn_more_module_type === 'Type-A' ? 'clbg' : 'clg' %>"><%- data.learn_more_content %></mj-text>
         <% if (data.learn_more_button_text) { %>
             <mj-spacer height="30px" /> 
             <!--Hero Button-->

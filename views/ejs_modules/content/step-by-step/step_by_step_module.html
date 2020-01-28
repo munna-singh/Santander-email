@@ -2,19 +2,19 @@
         <mj-column>
             <mj-text>
                 <img src="<%= data.step_by_step_module_image %>" class="imgl" />
-                <div class="shst cr"><%= data.step_by_step_module_title %></div>
-                <div class="bdcy"><%= data.step_by_step_module_subtitle %></div>
+                <div class="shst cr"><%- data.step_by_step_module_title %></div>
+                <div class="bdcy"><%- data.step_by_step_module_subtitle %></div>
             </mj-text>
             <mj-spacer height="20px" />
-            <mj-text css-class="bdc" mj-class="clg"><%= data.step_by_step_module_content %></mj-text>
+            <mj-text css-class="bdc" mj-class="clg"><%- data.step_by_step_module_content %></mj-text>
             <mj-spacer height="20px" />
             <mj-table padding="0">
                 <% JSON.parse(data.step_by_step_module_data).forEach((el, index) =>{ %>
                 <tr>
                     <td valign="top" style="vertical-align: top;"><span class="count"><%= index+1 %></span></td>
                     <td>
-                        <div class="bdcy"><b><%= el.title %></b></div>
-                        <div class="bdcy"><%= el.body_copy %></div>
+                        <div class="bdcy"><b><%- el.title %></b></div>
+                        <div class="bdcy"><%- el.body_copy %></div>
                     </td>
                 </tr>
                 <tr>

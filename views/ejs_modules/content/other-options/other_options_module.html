@@ -1,14 +1,14 @@
 <mj-wrapper css-class="<%= data.other_options_module_spacer_type %>">
     <mj-section background-color="<%= data.other_options_sidebar_color %>" padding-right="30px">
         <mj-column background-color="white" padding-left="60px" padding-right="30px">
-            <mj-text mj-class="sht clr"><%= data.other_options_module_title %></mj-text>
+            <mj-text mj-class="sht clr"><%- data.other_options_module_title %></mj-text>
             <mj-spacer height="10px" /> 
             <mj-text css-class="bdc blct" mj-class="clg"><%- data.other_options_module_content %></mj-text>
             <mj-spacer height="30px" />
             <% JSON.parse(data.other_options_module_data).forEach(el =>{ %>
                 <mj-text>
-                    <div class="bdcy rcl"><%= el.title %></div>
-                    <div class="bdcy"><%= el.body_copy %></div>
+                    <div class="bdcy rcl"><%- el.title %></div>
+                    <div class="bdcy"><%- el.body_copy %></div>
                 </mj-text>
                 <mj-spacer height="20px" /> 
               <% }) %>

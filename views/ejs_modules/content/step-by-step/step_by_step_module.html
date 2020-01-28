@@ -1,0 +1,32 @@
+<mj-section css-class="<%= data.step_by_step_module_spacer_type %>" padding="0 60px">
+        <mj-column>
+            <mj-text>
+                <img src="<%= data.step_by_step_module_image %>" class="imgl" />
+                <div class="shst cr"><%= data.step_by_step_module_title %></div>
+                <div class="bdcy"><%= data.step_by_step_module_subtitle %></div>
+            </mj-text>
+            <mj-spacer height="20px" />
+            <mj-text css-class="bdc" mj-class="clg"><%= data.step_by_step_module_content %></mj-text>
+            <mj-spacer height="20px" />
+            <mj-table padding="0">
+                <% JSON.parse(data.step_by_step_module_data).forEach((el, index) =>{ %>
+                <tr>
+                    <td valign="top" style="vertical-align: top;"><span class="count"><%= index+1 %></span></td>
+                    <td>
+                        <div class="bdcy"><b><%= el.title %></b></div>
+                        <div class="bdcy"><%= el.body_copy %></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="20" style="line-height: 20px;">&nbsp;</td>
+                </tr>
+                <% }) %>
+            </mj-table>
+            <% if (data.step_by_step_module_button_text) { %>
+                <mj-spacer height="10px" /> 
+                <!--Hero Button-->
+                <mj-button align="left" css-class="hbtn" mj-class="btn <%= data.step_by_step_module_button_style %>" href="<%= data.step_by_step_module_button_link%>"><%= data.step_by_step_module_button_text %></mj-button>
+            <% } %>
+    
+        </mj-column>
+    </mj-section> 

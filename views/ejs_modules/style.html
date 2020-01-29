@@ -6,6 +6,7 @@
     <mj-wrapper padding="0" />
     <mj-section padding="0" />
     <mj-column padding="0" />
+    <mj-table padding="0" />
     <mj-text padding="0" />
     <mj-image padding="0" />
     <mj-button padding="0" />
@@ -22,7 +23,6 @@
 </mj-attributes>
 <!-- INTERNAL STYLESHEET STARTS HERE -->
 <mj-style>
-
     .logo img {
         padding: 22px 30px 32px !important;
     }
@@ -57,9 +57,7 @@
       text-decoration: none;
     }
     .ftm div {
-      display: flex !important;
       padding: 40px 0 15px;
-      justify-content: space-between;
     }
     .ftm div a {
       font-size: 10px !important;
@@ -67,6 +65,8 @@
       line-height: 12px !important;
       color: #ec0000 !important;
       text-decoration: none;
+      display: inline-block !important;
+      width: 18% !important;
     }
     .fbl table {
       padding-left: 60px;
@@ -88,6 +88,8 @@
       padding-bottom: 15px !important;
     }
     .flks img {
+      width: 18px !important;
+      height: 28px !important;
       padding-bottom: 15px !important;
     }
     .flksc img {
@@ -371,6 +373,9 @@
       .imgl {
         float: left;
         padding-right: 20px;
+      }
+      .ftm div a {
+        width: 19% !important;
       }
     }
   </mj-style>

@@ -1,31 +1,36 @@
-<mj-section css-class="<%= data.feature_module_spacer_type %>">
-<% if (data.feature_module_image_orientation == 'Left') { %>
-    <mj-column css-class="fimgl">
-         <mj-image src="<%=withImg.img_url %>" css-class="bltimg"></mj-image>
-    </mj-column>
-    <mj-column>
-        <mj-text css-class="fpr" mj-class="sht clr"><%- data.feature_module_title %></mj-text>
-        <mj-spacer height="20px" />
-        <mj-text css-class="bdc fpr" mj-class="clr"><%- withImg.title %></mj-text>
-        <mj-text css-class="bdc hmb fpr" mj-class="clg"><%- withImg.body_copy %></mj-text>
-        <% if (data.feature_module_button_text) { %>
-            <mj-spacer height="30px" />
-            <mj-button width="100%" css-class="fpr" mj-class="btn <%= data.feature_module_button_style %>" href="<%= data.feature_module_button_link%>"><%= data.feature_module_button_text %></mj-button>
-        <% } %>
-   </mj-column>
-   <%} else { %>
-    <mj-column>
-            <mj-text css-class="fpl" mj-class="sht clr"><%- data.feature_module_title %></mj-text>
-            <mj-spacer height="20px" />
-            <mj-text css-class="bdc fpl" mj-class="clr"><%- withImg.title %></mj-text>
-            <mj-text css-class="bdc hmb fpl" mj-class="clg"><%- withImg.body_copy %></mj-text>
-            <% if (data.feature_module_button_text) { %>
-                <mj-spacer height="30px" />
-                <mj-button width="100%" css-class="fpl" mj-class="btn <%= data.feature_module_button_style %>" href="<%= data.feature_module_button_link%>"><%= data.feature_module_button_text %></mj-button>
-            <% } %>
-    </mj-column>
-    <mj-column css-class="fimgl fpt">
-        <mj-image src="<%=withImg.img_url %>" css-class="bltimg pb"></mj-image>
-    </mj-column>
-   <% } %>
-</mj-section>
+<mj-wrapper css-class="<%= data.feature_module_spacer_type %>" background-color="<%= data.feature_module_sidebar_color %>" padding-left="30px">
+        <mj-section background-color="white" padding-left="30px" padding-right="60px">
+            <mj-column>
+                    <mj-text mj-class="sht clr"><%- data.feature_module_title %></mj-text>
+            </mj-column>
+        </mj-section>
+        <mj-section background-color="white" padding-left="30px" padding-right="60px">
+                <% if (data.feature_module_image_orientation == 'Left') { %>
+                    <mj-column css-class="fimgl">
+                         <mj-image src="<%=withImg.img_url %>" css-class="bltimg"></mj-image>
+                    </mj-column>
+                    <mj-column>
+                        <mj-spacer height="20px" />
+                        <mj-text css-class="bdc" mj-class="clr"><%- withImg.title %></mj-text>
+                        <mj-text css-class="bdc hmb" mj-class="clg"><%- withImg.body_copy %></mj-text>
+                        <% if (data.feature_module_button_text) { %>
+                            <mj-spacer height="30px" />
+                            <mj-button width="100%" css-class="" mj-class="btn <%= data.feature_module_button_style %>" href="<%= data.feature_module_button_link%>"><%= data.feature_module_button_text %></mj-button>
+                        <% } %>
+                   </mj-column>
+                   <%} else { %>
+                    <mj-column>
+                            <mj-spacer height="20px" />
+                            <mj-text css-class="bdc" mj-class="clr"><%- withImg.title %></mj-text>
+                            <mj-text css-class="bdc hmb" mj-class="clg"><%- withImg.body_copy %></mj-text>
+                            <% if (data.feature_module_button_text) { %>
+                                <mj-spacer height="30px" />
+                                <mj-button width="100%" css-class="" mj-class="btn <%= data.feature_module_button_style %>" href="<%= data.feature_module_button_link%>"><%= data.feature_module_button_text %></mj-button>
+                            <% } %>
+                    </mj-column>
+                    <mj-column css-class="fimgl">
+                        <mj-image src="<%=withImg.img_url %>" css-class="bltimg pb"></mj-image>
+                    </mj-column>
+                   <% } %>
+        </mj-section>
+</mj-wrapper>
